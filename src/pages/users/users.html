@@ -1,0 +1,45 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>
+      PoliticsForce Overview
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="bg-style">
+  
+  <h1 text-center>Welcome to PoliticsForce Overview</h1>
+  <h3 text-center>Here we provide you the visual representation of the PoliticsForce's data.</h3>
+  <br><br>
+  <h4 text-center>Number of users in the app : {{obsTotal}}</h4>
+  <div>
+	  
+
+    <p>Users : </p>
+	  <ul>
+	  	<li *ngFor = "let user of obsUsers">
+	  		Name : {{user.f_name}} {{user.l_name}}
+	  	</li>
+	  </ul>
+  </div>
+  <div>
+    <div style="display: flex; justify-content: center;">
+      <ngx-charts-pie-chart 
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="single"
+          [legend]="showLegend"
+          [explodeSlices]="explodeSlices"
+          [labels]="showLabels"
+          [doughnut]="doughnut"
+          [gradient]="gradient"
+          >
+      </ngx-charts-pie-chart>
+    </div>  
+  </div>  
+
+</ion-content>
